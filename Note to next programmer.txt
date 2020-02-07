@@ -1,0 +1,184 @@
+Current Progress
+
+All works have been compressed and stored in Drive E
+
+3kstore_25072019_UnderDevelopment.zip , 3kstore_25072019_DeployedVersion.zip , and pgw.zip are essentail files for 3k-store.gigagames.co.th
+
+The differences between the Deployed version and Under development version is in the event page.
+The deployed version still have no progressed on the event page. The under development version have some progresses referencing from havana.zip's wheel page.
+
+havana.zip is a backup version for havana.gigagames.co.th back when it still running pre-registration.
+
+
+	--------------------------		3k-store.gigagames.co.th 	--------------------------
+
+3k-store.gigagames.co.th is running with react.
+It is using react-router to render paths. [https://reacttraining.com/react-router/web/guides/quick-start]
+It starts with App.js
+
+	App.js	---|
+			   |---Main.js
+			   |---MainHistory.js
+			   |---MainPackage.js
+			   |---MainPackItem.js
+			   |---MainPackEquipment.js
+			   |---MainRandomBox.js
+			   |---MainLogin.js
+			   |---MainRegis.js
+			   |---MainForgotpswd.js
+			   |---MainRePswd.js
+			   |---MainInven.js
+			   |---MainSuccess.js
+			   |---MainVerify.js
+			   
+	Note : Content inside this if condition "if (/Mobi|Android/i.test(navigator.userAgent)) { ////// }" have html elements for mobile only.
+		 : Content after this if condition is for PC and other devices.
+		 : Navigation.js exists in almost every pages.
+		 : The connection between this react app and all APIs is done with axios [https://github.com/axios/axios]
+			   
+
+
+	--------------------------		Main.js 	--------------------------
+	
+	Main.js is for the main page when the users landed.
+	It connects with 
+	- mainStyleComponent.js which take care of styling the body.
+	- Navigation.js which is html elements and all its function for the navigation bar.
+	- Home.js which is the first part of the main page, displaying the banners and recommending the products.
+	- Package.js which is the second part of the main page, displaying at most 6 items of each categories.
+	- Event.js which is the third and final part of the main page. It is still a work in progress
+	
+	Note for Navigation.js : this page have the js that checks the login state.
+	Note for Home.js and Package.js : These pages retrieve information from API and displayed it using direct DOM manipulation, which is not ideal.
+	
+	
+	--------------------------		MainHistory.js 	--------------------------
+	
+	MainHistory.js is for displaying transaction history for the users.
+	It connects with 
+	- mainStyleComponent.js which take care of styling the body.
+	- Navigation.js which is html elements and all its function for the navigation bar.
+	- History.js which retrieve information from API and display it to users.
+	
+	
+	--------------------------		MainPackage.js 	--------------------------
+	
+	MainPackage.js is for displaying all items in the category "Hero".
+	It connects with 
+	- mainStyleComponent.js which take care of styling the body.
+	- Navigation.js which is html elements and all its function for the navigation bar.
+	- PackHero.js which retrieve and displaying items in Hero categories.
+	
+	
+	--------------------------		MainPackItem.js 	--------------------------
+	
+	MainPackItem.js is for displaying all items in the category "Item".
+	It connects with 
+	- mainStyleComponent.js which take care of styling the body.
+	- Navigation.js which is html elements and all its function for the navigation bar.
+	- PackItem.js which retrieve and displaying items in Item categories.
+	
+	
+	--------------------------		MainPackEquipment.js 	--------------------------
+	
+	MainPackEquipment.js is for displaying all items in the category "Equipment".
+	It connects with 
+	- mainStyleComponent.js which take care of styling the body.
+	- Navigation.js which is html elements and all its function for the navigation bar.
+	- PackEquipment.js which retrieve and displaying items in Equipment categories.
+	
+	
+	--------------------------		MainRandomBox.js 	--------------------------
+	
+	MainRandomBox.js is for displaying all items in the category "Special".
+	It connects with 
+	- mainStyleComponent.js which take care of styling the body.
+	- Navigation.js which is html elements and all its function for the navigation bar.
+	- RandomBox.js which retrieve and displaying items in Special categories.
+	
+	
+	--------------------------		MainLogin.js 	--------------------------
+	
+	MainLogin.js is for login.
+	It connects with 
+	- mainStyleComponent.js which take care of styling the body.
+	- NavLogin.js which is a naviagation bar for login, register, forgot password, and reset password pages.
+	- Login.js which is html elements and all its function for login page.
+	
+	
+	--------------------------		MainRegis.js 	--------------------------
+	
+	MainLogin.js is for user registration.
+	It connects with 
+	- mainStyleComponent.js which take care of styling the body.
+	- NavLogin.js which is a naviagation bar for login, register, forgot password, and reset password pages.
+	- Regis.js which is html elements and all its function for registration page.
+	
+	Note : When first registered, there will be a comfirmation email. Users must verify their e-mail by clicking the link in the e-mail.
+		 : When clicked the link in the e-mail, users will be sent to Verify.js which will verify users' credential.
+		 : When users landed on verify page and successfully verified their accounts, they will be sent to the main page.
+		 : That is the sole purpose of Verify.js
+		 
+	
+	--------------------------		MainForgetpswd.js 	--------------------------
+	
+	MainForgetpswd.js is for users that forgot thier password and want to reset their password.
+	It connects with 
+	- mainStyleComponent.js which take care of styling the body.
+	- NavLogin.js which is a naviagation bar for login, register, forgot password, and reset password pages.
+	- Forgotpswd.js which is html elements and all its function for forgot password page.
+	
+	Note : When users have inputted their e-mail and press the button, there will be a warning saying to check the e-mail.
+		 : In the e-mail, users will find a link to reset password page.
+		 : In the reset password page, users will have to create a new password.
+		 : That is the sole purpose of MainRePswd.js
+		 
+
+
+	--------------------------		MainInven.js 	--------------------------
+	
+	MainInven.js is for inventory for the event on the website. It is still in progress, the same as event page.
+	It connects with 
+	- mainStyleComponent.js which take care of styling the body.
+	- Navigation.js which is html elements and all its function for the navigation bar.
+	- Inven.js which is html elements and all its function for inventory page.
+	
+	
+	
+	--------------------------		MainSuccess.js 	--------------------------
+	
+	MainSuccess.js is for verifying and displaying the code for the users after they have bought the packages.
+	It connects with 
+	- mainStyleComponent.js which take care of styling the body.
+	- Navigation.js which is html elements and all its function for the navigation bar.
+	- Success.js which is html elements and all its function for success page.
+	
+	Note : After the users bought every items, they will be taken to this page.
+		 : When they arrives at this page, there will be a message prompting the users to wait for the transaction success.
+		 : After the transaction is successfully verified, the users will be sent to the main page, with a popup displaying the code from the products they have just bought.
+		 : That is the solr purpose of MainSuccess.js page
+		 
+		 
+__________________________________________________________________________________________________________________________________________________________________________________________
+
+This is the start of the explanation for pgw.zip
+pgw.zip is the file for pay.gigagames.co.th
+		 
+	--------------------------		pay.gigagames.co.th 	--------------------------
+	
+pay.gigagames.co.th is running with react.
+It is using react-router to render paths. [https://reacttraining.com/react-router/web/guides/quick-start]
+It starts with App.js
+
+	App.js	---|
+			   |---AppMain.js
+			   |---AppOTP.js
+	
+	AppMain.js is for the users to comes in and input the TrueWallet account.
+	After the users inputted the TrueWallet account, it will check with TrueWallet API to see if it is valid.
+	If it is valid, the users will be sent to AppOTP.js page.
+	After the users have been sent to AppOTP.js, they must inputted the OTP they received.
+	After the users have inputted the OTP, it will check if it is valid or not.
+	If it is valid, then the transaction is completed. The users will be sent to MainSuccess.js at 3k-store.gigagames.co.th.
+	
+__________________________________________________________________________________________________________________________________________________________________________________________
