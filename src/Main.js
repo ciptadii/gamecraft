@@ -3,10 +3,10 @@ import { Body } from './mainStyleComponent';
 
 import Navigation from './Navigation';
 import Banner from './Banner';
-// import Banner2 from './Banner2';
 import Home from './Home';
 import Package from './Package';
 import Event from './Event';
+import Footer from './Footer';
 
 class Main extends Component {
   render() {
@@ -19,6 +19,7 @@ class Main extends Component {
         <Home />
         <Package />
         <Event />
+        <Footer />
       </Body>
       </>
     );

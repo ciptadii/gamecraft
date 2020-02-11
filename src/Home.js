@@ -566,11 +566,11 @@ class Home extends React.Component {
     } else {
       return (
         <>
-          <Row style={{ backgroundColor: 'white', color: 'black', fontSize: '24px', fontWeight: 'bold', margin: '20px 0', width: '1329px', height: '48px' }}>
-            <Col sm={2} md={2} style={{ height: '100%', textAlign: 'center', lineHeight: '48px' }}>
+          <Row style={{ backgroundColor: 'white', color: 'black', fontSize: '24px', fontWeight: 'bold', margin: '20px 0', height: '48px' }}>
+            <Col sm={2} md={2} style={{ height: '100%', textAlign: 'left', lineHeight: '48px', paddingLeft: '60px' }}>
               <p style={{ display: 'inline-block', margin: 0, verticalAlign: 'middle', lineHeight: 1.5 }}>โปรโมชั่นสุดฮิต</p>
             </Col>
-            <Col sm={2} smOffset={10} md={2} mdOffset={8} style={{ height: '100%', textAlign: 'center', lineHeight: '48px' }}>
+            <Col sm={2} smOffset={10} md={2} mdOffset={8} style={{ height: '100%', textAlign: 'right', lineHeight: '48px', paddingRight: '30px' }}>
               <a href='/packageHero' style={{ color: 'black' }}><p style={{ display: 'inline-block', margin: 0, verticalAlign: 'middle', lineHeight: 1.5 }}>ดูเพิ่มเติม ></p></a>
             </Col>
           </Row>
@@ -582,15 +582,15 @@ class Home extends React.Component {
                 <Panel eventKey="1">
                   <Panel.Heading style={{ padding: 0 }}>
                     <Panel.Title toggle id="ProdId1">
-                      <div id="HotOne" style={{ height: '259px', width: '254px', textAlign: "center", alignContent: "center", backgroundSize: '100% 100%' }}>
+                      <div id="HotOne" style={{ height: '259px', width: '254px', textAlign: "center", alignContent: "center" }}>
                         <img style={{ zIndex: 100 }} srcset="" id="hotPic0" src={require('./Home/image_package.png')} />
                       </div>
                     </Panel.Title>
                   </Panel.Heading>
                   <Panel.Body style={{ height: '119px', width: '254px', color: 'black', padding: 10 }}>
-                    <div style={{ textAlign: "left" }}>
-                      <p id="hotTitle0" style={{ fontSize: '20px', fontWeight: 'bold' }}>แพ็คเกจโกลด์แถมชิปโบนัส</p>
-                      <p style={{ fontSize: '16px' }}>100 โกลด์ + โบนัส 100,000 ชิป</p>
+                    <div style={{ textAlign: "left", margin: '0 0 10px' }}>
+                      <p id="hotTitle0" style={{ fontSize: '20px', fontWeight: 'bold', margin: 0 }}>แพ็คเกจโกลด์แถมชิปโบนัส</p>
+                      <p style={{ fontSize: '16px', margin: 0 }}>100 โกลด์ + โบนัส 100,000 ชิป</p>
                     </div>
                     <div style={{ height: 41, width: 152, textAlign: "center", alignContent: "center", backgroundImage: `url(${ButtonName})`, marginLeft: 'auto', color: 'white' }}>
                       <p style={{ padding: '10px', lineHeight: '1', margin: 0, height: '100%', fontSize: '24px' }}>ดูเพิ่มเติม ></p>
@@ -609,9 +609,9 @@ class Home extends React.Component {
                     </Panel.Title>
                   </Panel.Heading>
                   <Panel.Body style={{ height: '119px', width: '254px', color: 'black', padding: 10 }}>
-                    <div style={{ textAlign: "left" }}>
-                      <p id="hotTitle1" style={{ fontSize: '20px', fontWeight: 'bold' }}>แพ็คเกจโกลด์แถมชิปโบนัส</p>
-                      <p style={{ fontSize: '16px' }}>100 โกลด์ + โบนัส 100,000 ชิป</p>
+                    <div style={{ textAlign: "left", margin: '0 0 10px' }}>
+                      <p id="hotTitle1" style={{ fontSize: '20px', fontWeight: 'bold', margin: 0 }}>แพ็คเกจโกลด์แถมชิปโบนัส</p>
+                      <p style={{ fontSize: '16px', margin: 0 }}>100 โกลด์ + โบนัส 100,000 ชิป</p>
                     </div>
                     <div style={{ height: 41, width: 152, textAlign: "center", alignContent: "center", backgroundImage: `url(${ButtonName})`, marginLeft: 'auto', color: 'white' }}>
                       <p style={{ padding: '10px', lineHeight: '1', margin: 0, height: '100%', fontSize: '24px' }}>ดูเพิ่มเติม ></p>
@@ -630,9 +630,9 @@ class Home extends React.Component {
                     </Panel.Title>
                   </Panel.Heading>
                   <Panel.Body style={{ height: '119px', width: '254px', color: 'black', padding: 10 }}>
-                    <div style={{ textAlign: "left" }}>
-                      <p id="hotTitle2" style={{ fontSize: '20px', fontWeight: 'bold' }}>แพ็คเกจโกลด์แถมชิปโบนัส</p>
-                      <p style={{ fontSize: '16px' }}>100 โกลด์ + โบนัส 100,000 ชิป</p>
+                    <div style={{ textAlign: "left", margin: '0 0 10px' }}>
+                      <p id="hotTitle2" style={{ fontSize: '20px', fontWeight: 'bold', margin: 0 }}>แพ็คเกจโกลด์แถมชิปโบนัส</p>
+                      <p style={{ fontSize: '16px', margin: 0 }}>100 โกลด์ + โบนัส 100,000 ชิป</p>
                     </div>
                     <div style={{ height: 41, width: 152, textAlign: "center", alignContent: "center", backgroundImage: `url(${ButtonName})`, marginLeft: 'auto', color: 'white' }}>
                       <p style={{ padding: '10px', lineHeight: '1', margin: 0, height: '100%', fontSize: '24px' }}>THB 139.00</p>
@@ -651,9 +651,9 @@ class Home extends React.Component {
                     </Panel.Title>
                   </Panel.Heading>
                   <Panel.Body style={{ height: '119px', width: '254px', color: 'black', padding: 10 }}>
-                    <div style={{ textAlign: "left" }}>
-                      <p id="hotTitle3" style={{ fontSize: '20px', fontWeight: 'bold' }}>แพ็คเกจโกลด์แถมชิปโบนัส</p>
-                      <p style={{ fontSize: '16px' }}>100 โกลด์ + โบนัส 100,000 ชิป</p>
+                    <div style={{ textAlign: "left", margin: '0 0 10px' }}>
+                      <p id="hotTitle3" style={{ fontSize: '20px', fontWeight: 'bold', margin: 0 }}>แพ็คเกจโกลด์แถมชิปโบนัส</p>
+                      <p style={{ fontSize: '16px', margin: 0 }}>100 โกลด์ + โบนัส 100,000 ชิป</p>
                     </div>
                     <div style={{ height: 41, width: 152, textAlign: "center", alignContent: "center", backgroundImage: `url(${ButtonName})`, marginLeft: 'auto', color: 'white' }}>
                       <p style={{ padding: '10px', lineHeight: '1', margin: 0, height: '100%', fontSize: '24px' }}>THB 249.00</p>
@@ -673,9 +673,9 @@ class Home extends React.Component {
                     </Panel.Title>
                   </Panel.Heading>
                   <Panel.Body style={{ height: '119px', width: '254px', color: 'black', padding: 10 }}>
-                    <div style={{ textAlign: "left" }}>
-                      <p id="hotTitle4" style={{ fontSize: '20px', fontWeight: 'bold' }}>แพ็คเกจโกลด์แถมชิปโบนัส</p>
-                      <p style={{ fontSize: '16px' }}>100 โกลด์ + โบนัส 100,000 ชิป</p>
+                    <div style={{ textAlign: "left", margin: '0 0 10px' }}>
+                      <p id="hotTitle4" style={{ fontSize: '20px', fontWeight: 'bold', margin: 0 }}>แพ็คเกจโกลด์แถมชิปโบนัส</p>
+                      <p style={{ fontSize: '16px', margin: 0 }}>100 โกลด์ + โบนัส 100,000 ชิป</p>
                     </div>
                     <div style={{ height: 41, width: 152, textAlign: "center", alignContent: "center", backgroundImage: `url(${ButtonName})`, marginLeft: 'auto', color: 'white' }}>
                       <p style={{ padding: '10px', lineHeight: '1', margin: 0, height: '100%', fontSize: '24px' }}>THB 599.00</p>
@@ -697,15 +697,12 @@ class Home extends React.Component {
   }
 
   render() {
-
-
-
     return (
       <Section id='home'>
         <SectionContainer>
           <SectionContainerExtension>
             <Content>
-              <Grid style={{ width: '100%' }}>
+              <Grid>
                 {this.checkingDevice()}
               </Grid>
             </Content>

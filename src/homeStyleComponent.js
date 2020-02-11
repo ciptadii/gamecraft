@@ -42,23 +42,28 @@ export const Content = styled.div`
     text-align:center;
 
     
-    @media only screen and (max-width: 1920px){
-      .container{
-          width: 1329px !important;
-          padding: 0;
-          }
-          @media only screen and (max-width: 768px){
-            .container {
-             width: 750px;
-             background-color: transparent !important;
-            }
-            .container#BagContainer {
-              width: 750px;
-              background-color: black !important;
-             }
-  }
+    @media only screen and (max-width: 1920px)  {
+      .container  {
+        width: 1329px !important;
+        padding: 0;
+      }
+      @media only screen and (max-width: 768px) {
+        .container {
+          width: 750px;
+        }
+        .container#BagContainer {
+          width: 750px;
+        }
+      }
+    }
+    
+    .panel-title {
+      background-color: white;
     }
 
+    .panel-group {
+      margin: 0;
+    }
 
     @media only screen and (max-width: 768px){
         margin: 0% auto;
