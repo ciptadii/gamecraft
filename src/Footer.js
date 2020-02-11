@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
 import { Grid, Row, Col } from 'react-bootstrap';
 
-import { SectionContainerEX, SectionContainerExtension } from './mainStyleComponent';
-import { Section, Content } from './eventStyleComponent';
+import { Content } from './eventStyleComponent';
 
 class Footer extends Component {
 
