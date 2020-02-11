@@ -1,11 +1,12 @@
 import React from 'react'
 import style from 'styled-components'
 // import { DropdownMenu, MenuItem } from 'react-bootstrap-dropdown-menu';
-import { Grid, Row, Col, NavDropdown, MenuItem } from 'react-bootstrap'
+import { Grid, Row, Col, NavDropdown, MenuItem, Glyphicon } from 'react-bootstrap'
 import $ from 'jquery';
 import axios from 'axios';
 import _ from 'lodash'
-import UserIcon from './asset/Home/Untitled-2s.png';
+
+import UserIcon from './asset/Home/Untitled-2s.png'
 import logo from './Home/game_icon.png';
 import LoginPic from './asset/nav/Profile.png';
 import blackBG from './asset/top750_50.png';
@@ -23,18 +24,21 @@ const Nav = style.div`
     opacity: 1.0;
     min-width: 768px;
     color: black;
+
+
           
       @media only screen and (max-width: 1920px){
         .container{
             width: 1329px;
             }
-        @media only screen and (max-width: 768px){
-          .container {
-            width: 750px;
-          }
-        }
+            @media only screen and (max-width: 768px){
+              .container {
+               width: 750px;
+              }
+    }
       }
 
+      
     #__react_bs_dd_menuItems_1{
       background-color: black !important;
     }
@@ -92,7 +96,8 @@ const Nav = style.div`
     
     /* Links inside the dropdown */
     .dropdown-content a {
-      color: white;
+      color: #F6F6F6;
+      top: 14px;
       padding: 12px 16px;
       text-decoration: none;
       display: block;
@@ -127,10 +132,220 @@ const Nav = style.div`
     }
 
     .dropdown-menu{
+      background-color: #F6F6F6;
+      color: #ffffff
+      border: 1px solid white;
+      border-radius: 0px;
+      min-height: 634px;
+      min-width: 800px;
+     
+    }
+
+    .dropdown-menu>li>a:focus, .dropdown-menu>li>{
+      color: #ffffff;
+      text-decoration: none;
+      background-color: #8b0013;
+   
+      
+    }
+
+    .dropdown-menu>li>a{
+      color: #000
+      background-color: #ffffff
+    
+      min-width: 698px;
+      font-size: 30px;
+      margin-top: 10px;
+      margin-bottom: 10px;
+     
+    }
+
+
+`
+
+const NavNoti = style.div`
+    background-color: transparent;
+    font-size: 15px;
+    width: 100%;
+    position: fixed;
+    z-index: 120;
+    opacity: 1.0;
+    min-width: 768px;
+    min-height: 80px;
+    color: #ffffff;
+    top: 300px;
+
+    @media only screen and (max-width: 1920px){
+      .container{
+          width: 1329px;
+          text-align: center;
+          }
+          @media only screen and (max-width: 768px){
+            .container {
+             width: 750px;
+             text-align: center;
+            }
+            top: 430px !important;
+  }
+    }
+
+    button{
+      background-color: black;
+      color: white;
+    }
+
+    .hidden {
+    // -webkit-animation: fadeOut 3s;
+    // animation: fadeOut 3s;
+
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0s 2s, opacity 2s linear;
+    }
+
+    @keyframes fadeOut {
+      0% { opacity: 1;}
+      50% { opacity: 0.5}
+      100% { opacity: 0;}
+  }
+`
+const NavNotiLogin = style.div`
+    background-color: transparent;
+    font-size: 15px;
+    width: 100%;
+    position: fixed;
+    z-index: 120;
+    opacity: 1.0;
+    min-width: 768px;
+    min-height: 80px;
+    color: #ffffff;
+    top: 300px;
+
+    @media only screen and (max-width: 1920px){
+      .container{
+          width: 1329px;
+          text-align: center;
+          }
+          @media only screen and (max-width: 768px){
+            .container {
+             width: 750px;
+             text-align: center;
+            }
+            top: 430px !important;
+  }
+    }
+
+    button{
+      background-color: black;
+      color: white;
+    }
+
+    .hidden {
+    // -webkit-animation: fadeOut 3s;
+    // animation: fadeOut 3s;
+
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0s 2s, opacity 2s linear;
+    }
+
+    @keyframes fadeOut {
+      0% { opacity: 1;}
+      50% { opacity: 0.5}
+      100% { opacity: 0;}
+  }
+`
+
+const NavMobi = style.div`
+    background-color: #0e0000;
+    font-size: 15px;
+    width: 100vw;
+    position: fixed;
+    z-index: 9999;
+    opacity: 1.0;
+    min-width: 768px;
+    color: black;
+    bottom: 0vh;
+    // top: 95%;
+
+    @media only screen and (min-width: 768px){
+      bottom: 44%;
+    }
+
+    @media only screen and (min-width: 768px){
+      bottom: 44%;
+    }
+    @media only screen and (max-width: 1920px){
+      .container{
+        width: 1329px;
+      }
+      // bottom: 80vh;
+      @media only screen and (max-width: 768px){
+        .container {
+          width: 750px;
+        }
+      }
+    }
+
+    #__react_bs_dd_menuItems_1{
+      background-color: black !important;
+    }
+
+    @media (max-width: 1366px) {
+      font-size: 27px;
+    }
+
+    @media (max-width: 960px) {
+      font-size: 11px;
+    }
+    
+    & a {
+        text-decoration: none;
+        color: black;
+        display: inline-block;
+        vertical-align: middle;
+
+        @media (max-height: 768px) {
+
+          @media all and (min-width: 200px) and (max-width: 770px) {
+            padding-left: 10px;
+            padding-right: 10px;
+          }
+        }
+    }
+
+    a#basic-nav-dropdown.dropdown-toggle{
+      width: 40px;
+      height: 40px;
+      display: inline-block;
+      background-image: url(${LoginPic});
+      background-size: 100% 100%;
+    }
+
+    .caret{
+      display:none;
+    }
+
+    .dropdown{
+      width: 40px;
+      height: 40px;
+      display: inline-block;
+    }
+
+    .dropdown-menu{
       background-color: black;
       color: #ffffff
       border: 1px solid white;
       border-radius: 0px;
+      top: -300%;
+      left: -120px;
+
+      @media only screen and (max-width: 768px){
+        top: -235%;
+        left: -260px;
+        width: 300px;
+        font-size: 25px;
+      }
     }
 
     .dropdown-menu>li>a:focus, .dropdown-menu>li>a:hover{
@@ -146,215 +361,14 @@ const Nav = style.div`
 
 `
 
-const NavNoti = style.div`
-  background-color: transparent;
-  font-size: 15px;
-  width: 100%;
-  position: fixed;
-  z-index: 120;
-  opacity: 1.0;
-  min-width: 768px;
-  min-height: 80px;
-  color: #ffffff;
-  top: 300px;
-
-  @media only screen and (max-width: 1920px){
-    .container{
-      width: 1329px;
-      text-align: center;
-    }
-    @media only screen and (max-width: 768px){
-      .container {
-        width: 750px;
-        text-align: center;
-      }
-      top: 430px !important;
-    }
-  }
-
-
-  button{
-    background-color: black;
-    color: white;
-  }
-
-  .hidden {
-    // -webkit-animation: fadeOut 3s;
-    // animation: fadeOut 3s;
-
-    visibility: hidden;
-    opacity: 0;
-    transition: visibility 0s 2s, opacity 2s linear;
-  }
-
-  @keyframes fadeOut {
-    0% { opacity: 1;}
-    50% { opacity: 0.5}
-    100% { opacity: 0;}
-  }
-`
-
-const NavNotiLogin = style.div`
-  background-color: transparent;
-  font-size: 15px;
-  width: 100%;
-  position: fixed;
-  z-index: 120;
-  opacity: 1.0;
-  min-width: 768px;
-  min-height: 80px;
-  color: #ffffff;
-  top: 300px;
-
-  @media only screen and (max-width: 1920px){
-    .container{
-      width: 1329px;
-      text-align: center;
-    }
-    @media only screen and (max-width: 768px){
-      .container {
-        width: 750px;
-        text-align: center;
-      }
-      top: 430px !important;
-    }
-  }
-
-  button{
-    background-color: black;
-    color: white;
-  }
-
-  .hidden {
-    // -webkit-animation: fadeOut 3s;
-    // animation: fadeOut 3s;
-
-    visibility: hidden;
-    opacity: 0;
-    transition: visibility 0s 2s, opacity 2s linear;
-  }
-
-  @keyframes fadeOut {
-    0% { opacity: 1;}
-    50% { opacity: 0.5}
-    100% { opacity: 0;}
-  }
-`
-
-const NavMobi = style.div`
-  background-color: #0e0000;
-  font-size: 15px;
-  width: 100vw;
-  position: fixed;
-  z-index: 9999;
-  opacity: 1.0;
-  min-width: 768px;
-  color: black;
-  bottom: 0vh;
-  // top: 95%;
-
-  @media only screen and (min-width: 768px){
-    bottom: 44%;
-  }
-  @media only screen and (max-width: 1920px){
-    .container{
-      width: 1329px;
-    }
-    // bottom: 80vh;
-    @media only screen and (max-width: 768px){
-      .container {
-        width: 750px;
-      }
-    }
-  }
-    
-  #__react_bs_dd_menuItems_1{
-    background-color: black !important;
-  }
-
-  @media (max-width: 1366px) {
-    font-size: 27px;
-  }
-
-  @media (max-width: 960px) {
-    font-size: 11px;
-  }
-  
-  & a {
-      text-decoration: none;
-      color: black;
-      display: inline-block;
-      vertical-align: middle;
-
-      @media (max-height: 768px) {
-
-        @media all and (min-width: 200px) and (max-width: 770px) {
-          padding-left: 10px;
-          padding-right: 10px;
-        }
-      }
-  }
-
-  a#basic-nav-dropdown.dropdown-toggle{
-    width: 40px;
-    height: 40px;
-    display: inline-block;
-    background-image: url(${LoginPic});
-    background-size: 100% 100%;
-  }
-
-  .caret{
-    display:none;
-  }
-
-  .dropdown{
-    width: 40px;
-    height: 40px;
-    display: inline-block;
-  }
-
-  .dropdown-menu{
-    background-color: black;
-    color: #ffffff
-    border: 1px solid white;
-    border-radius: 0px;
-    top: -300%;
-    left: -120px;
-
-    @media only screen and (max-width: 768px){
-      top: -235%;
-      left: -260px;
-      width: 300px;
-      font-size: 25px;
-    }
-  }
-
-  .dropdown-menu>li>a:focus, .dropdown-menu>li>a:hover{
-    color: #ffffff;
-    text-decoration: none;
-    background-color: #8b0013;
-  }
-
-  .dropdown-menu>li>a{
-    color: #ffffff
-  }
-`
-
-const HeaderTop = style.div`
-  background-color: #212528;
-  position: relative;
-  width: 100%;
-  min-width: 768px;
-  min-height: 78px;
-`
-
 const Header = style.div`
   position: relative;
   margin: 0 auto;
+  width: 70vw;
   max-width: 1329px;
   min-width: 768px;
   // height: 4.375vw;
-  min-height: 132px;
+  min-height: 95px;
   vertical-align: middle;
 `
 
@@ -395,6 +409,7 @@ const NavbarContainer = style.div`
 //   #__react_bs_dd_carat_1{
 //     top: 8px;
 //   }
+
 // `
 
 const NavBarTab = style.a`
@@ -443,7 +458,7 @@ const PointID = style.span`
   color: black;
 `
 
-// const LoggedInCont = <NavDropdown eventKey={8} title="" id="basic-nav-dropdown"><MenuItem eventKey={8.1} href='/id'>ข้อมูลส่วนตัว</MenuItem><MenuItem eventKey={8.2} href='/history'>ประวัติการซื้อขาย</MenuItem><MenuItem eventKey={8.3} href='/history'>กระเป๋า</MenuItem><MenuItem eventKey={8.4} href='#' onClick={()=>{this.deleteCookieLogin("LoggedIn"); window.location.replace("/")}}><i className="glyphicon glyphicon-log-out"></i> &nbsp;ออกจากระบบ</MenuItem></NavDropdown>
+// const LoggedInCont = <NavDropdown eventKey={8} title="" id="basic-nav-dropdown"><MenuItem eventKey={8.1} href='/id'>ข้อมูลส่วนตัว</MenuItem><MenuItem eventKey={8.2} href='/history'>ประวัติการซื้อขาย</MenuItem><MenuItem eventKey={8.3} href='/history'>กระเป๋า</MenuItem><MenuItem eventKey={8.4} href='#' onClick={()=>{this.deleteCookieLogin("LoggedIn"); window.location.replace("/")}}><i class="glyphicon glyphicon-log-out"></i> &nbsp;ออกจากระบบ</MenuItem></NavDropdown>
 // const NotLoggedInCont = <NavDropdown eventKey={8} title="" id="basic-nav-dropdown"><MenuItem eventKey={8.1} href='/login'>ลงชื่อเข้าใช้</MenuItem><MenuItem eventKey={8.2} href='/regis'>สร้างบัญชี</MenuItem></NavDropdown>
 
 class Navigation extends React.Component {
@@ -473,7 +488,7 @@ class Navigation extends React.Component {
     document.getElementById("textPrompt").style.display = 'none'
     // document.getElementById("notiBanner").style.visibility = "visible"
     document.getElementById("notiCoverTwo").style.visibility = "visible"
-    const loggedmenu = <NavDropdown eventKey={8} title="" id="basic-nav-dropdown"><MenuItem eventKey={8.2} href='/history'>ประวัติการซื้อขาย</MenuItem><MenuItem eventKey={8.3} href='/inventory'>กระเป๋า</MenuItem><MenuItem eventKey={8.4} href='#' onClick={() => { this.logout(); }}><i className="glyphicon glyphicon-log-out"></i> &nbsp;ออกจากระบบ</MenuItem></NavDropdown>
+    const loggedmenu = <NavDropdown eventKey={8} title="" id="basic-nav-dropdown"><MenuItem eventKey={8.2} href='/history'>ประวัติการซื้อขาย</MenuItem><MenuItem eventKey={8.3} href='/inventory'>กระเป๋า</MenuItem><MenuItem eventKey={8.4} href='#' onClick={() => { this.logout(); }}><i class="glyphicon glyphicon-log-out"></i> &nbsp;ออกจากระบบ</MenuItem></NavDropdown>
     // <MenuItem eventKey={8.1} href='/id'>ข้อมูลส่วนตัว</MenuItem>
     this.setState({ navmenu: loggedmenu })
   }
@@ -481,9 +496,21 @@ class Navigation extends React.Component {
   NotLoggedInCont() {
     document.getElementById("pointDisplay").style.display = 'none'
     document.getElementById("textPrompt").innerHTML = 'กรุณาล็อคอิน'
-    const notloggedmenu = <NavDropdown eventKey={8} title="" id="basic-nav-dropdown"><MenuItem eventKey={8.1} href='/login'>ลงชื่อเข้าใช้</MenuItem><MenuItem eventKey={8.2} href='/regis'>สร้างบัญชี</MenuItem></NavDropdown>
+    const notloggedmenu = <NavDropdown eventKey={8} title="" id="basic-nav-dropdown">
+      <MenuItem eventKey={8.1} href='/login'> <Row><Col md={8} style={{ display: 'inline-block', marginTop: 59, marginBottom: 59, marginLeft: 114, verticalAlign: 'middle', lineHeight: 1.5 }}>ข้อมูลส่วนตัว </Col><Col md={{ span: 8, offset: 8 }}> {<Glyphicon style={{ display: 'inline-block', margin: 49, verticalAlign: 'middle', lineHeight: 1.5 }} glyph="glyphicon glyphicon-chevron-right" />}</Col> </Row>
+      </MenuItem>
+      <MenuItem eventKey={8.1} href='/login'> <Row><Col md={8} style={{ display: 'inline-block', marginTop: 59, marginBottom: 59, marginLeft: 114, verticalAlign: 'middle', lineHeight: 1.5 }}>ประวัติการซื้อ </Col><Col md={{ span: 8, offset: 8 }}> {<Glyphicon style={{ display: 'inline-block', margin: 59, verticalAlign: 'middle', lineHeight: 1.5 }} glyph="glyphicon glyphicon-chevron-right" />}</Col> </Row>
+      </MenuItem>
+      <MenuItem eventKey={8.1} href='/login'> <Row><Col md={8} style={{ display: 'inline-block', marginTop: 59, marginBottom: 59, marginLeft: 114, verticalAlign: 'middle', lineHeight: 1.5 }}>แต้มสะส </Col><Col md={{ span: 8, offset: 8 }}> {<Glyphicon style={{ display: 'inline-block', margin: 59, verticalAlign: 'middle', lineHeight: 1.5 }} glyph="glyphicon glyphicon-chevron-right" />}</Col> </Row>
+      </MenuItem>
+      <MenuItem eventKey={8.1} href='/login'> <Row><Col md={8} style={{ display: 'inline-block', marginTop: 59, marginBottom: 59, marginLeft: 114, verticalAlign: 'middle', lineHeight: 1.5 }}>ขั้นตอนการเติมเงิน </Col><Col md={{ span: 8, offset: 8 }}> {<Glyphicon style={{ display: 'inline-block', margin: 59, verticalAlign: 'middle', lineHeight: 1.5 }} glyph="glyphicon glyphicon-chevron-right" />}</Col> </Row>
+      </MenuItem>
+      <MenuItem eventKey={8.1} href='/login'> <Row><Col md={8} style={{ display: 'inline-block', marginTop: 59, marginBottom: 59, marginLeft: 114, verticalAlign: 'middle', lineHeight: 1.5 }}>ออกจากระบบ </Col><Col md={{ span: 8, offset: 8 }}> </Col> </Row>
+      </MenuItem>
+    </NavDropdown>
     this.setState({ navmenu: notloggedmenu })
   }
+
 
   setCookieTab(cname) {
     var d = new Date();
@@ -552,11 +579,11 @@ class Navigation extends React.Component {
               <Grid style={{ textAlign: 'center', alignContent: 'center' }}>
                 <Row>
                   <Col xs={9} sm={9} md={9}>
-                    <NavBarTab href='/#home'><img alt='Button Home' src={require('./asset/nav/mobi/Button-HOME.png')} /></NavBarTab>
-                    <NavBarTab href='/#packageHot'><img alt='Button Hot' src={require('./asset/nav/mobi/Button-Hot.png')} /></NavBarTab>
+                    <NavBarTab href='/#home'><img src={require('./asset/nav/mobi/Button-HOME.png')} /></NavBarTab>
+                    <NavBarTab href='/#packageHot'><img src={require('./asset/nav/mobi/Button-Hot.png')} /></NavBarTab>
                     {/* <NavBarTab href='/package'><img src={require('./asset/nav/mobi/Button-Package.png')} /></NavBarTab> */}
-                    <NavBarTab href='/packageHero'><img alt='Button Package' src={require('./asset/nav/mobi/Button-Package.png')} /></NavBarTab>
-                    <NavBarTab href='/#event'><img alt='Button Event' src={require('./asset/nav/mobi/Button-Event.png')} /></NavBarTab>
+                    <NavBarTab href='/packageHero'><img src={require('./asset/nav/mobi/Button-Package.png')} /></NavBarTab>
+                    <NavBarTab href='/#event'><img src={require('./asset/nav/mobi/Button-Event.png')} /></NavBarTab>
                   </Col>
                   <Col xs={2} sm={2} md={2}>
                     <div id="textPrompt" style={{ display: 'inline-block', textAlign: 'center', lineHeight: 1, paddingTop: 20, fontSize: 18 }}></div>
@@ -571,7 +598,7 @@ class Navigation extends React.Component {
                   <MenuItem eventKey={8.1} href='/id'>ข้อมูลส่วนตัว</MenuItem>
                   <MenuItem eventKey={8.2} href='/history'>ประวัติการซื้อขาย</MenuItem>
                   <MenuItem eventKey={8.3} href='/history'>กระเป๋า</MenuItem>
-                  <MenuItem eventKey={8.4} href='/' onClick={()=>{this.deleteCookieLogin("LoggedIn")}}><i className="glyphicon glyphicon-log-out"></i> &nbsp;ออกจากระบบ</MenuItem>
+                  <MenuItem eventKey={8.4} href='/' onClick={()=>{this.deleteCookieLogin("LoggedIn")}}><i class="glyphicon glyphicon-log-out"></i> &nbsp;ออกจากระบบ</MenuItem>
                 </NavDropdown> */}
                     {this.state.navmenu}
                   </Col>
@@ -597,7 +624,7 @@ class Navigation extends React.Component {
               <Col sm={8} md={8}></Col>
               <Col sm={4} md={4}>
                 <div style={{ position: 'absolute', right: '5%', top: -190 }}>
-                  <img width={'100%'} src={require('./asset/Home/close.png')} style={{ cursor: 'pointer', width: 50, height: 50, backgroundColor: 'transparent', border: 'transparent 20px' }} onClick={() => { document.getElementById("notiBanner").style.display = "none"; localStorage.removeItem('success'); document.getElementById("notiCoverOne").style.display = "none"; }} alt='Button Close'></img>
+                  <img width={'100%'} src={require('./asset/Home/close.png')} style={{ cursor: 'pointer', width: 50, height: 50, backgroundColor: 'transparent', border: 'transparent 20px' }} onClick={() => { document.getElementById("notiBanner").style.display = "none"; localStorage.removeItem('success'); document.getElementById("notiCoverOne").style.display = "none"; }}></img>
                 </div>
               </Col>
             </Row>
@@ -617,12 +644,15 @@ class Navigation extends React.Component {
               <Col sm={8} md={8}></Col>
               <Col sm={4} md={4}>
                 <div style={{ position: 'absolute', right: '5%', top: -190 }}>
-                  <img width={'100%'} src={require('./asset/Home/close.png')} style={{ cursor: 'pointer', width: 50, height: 50, backgroundColor: 'transparent', border: 'transparent 20px' }} onClick={() => { document.getElementById("notiBannerLogin").style.display = "none"; localStorage.removeItem('loginprompt'); document.getElementById("notiCoverTwo").style.display = "none"; }} alt='Button Close'></img>
+                  <img width={'100%'} src={require('./asset/Home/close.png')} style={{ cursor: 'pointer', width: 50, height: 50, backgroundColor: 'transparent', border: 'transparent 20px' }} onClick={() => { document.getElementById("notiBannerLogin").style.display = "none"; localStorage.removeItem('loginprompt'); document.getElementById("notiCoverTwo").style.display = "none"; }}></img>
                 </div>
               </Col>
             </Row>
           </Grid>
         </NavNotiLogin>
+        {/* <GoTop>
+          <a href="/#home"><img src={require('./asset/Home/Up-Arrow-PNG-Picture.png')}></img></a>
+      </GoTop> */}
       </>)
         ;
     }
@@ -633,7 +663,6 @@ class Navigation extends React.Component {
         <Nav>
           <Header>
             <NavbarContainer>
-
               <Grid style={{ textAlign: 'center', alignContent: 'center' }}>
                 <Row>
                   <Col sm={2} md={2}><a href="/"><img style={{ paddingTop: 6 }} src={logo}></img></a></Col>
@@ -692,7 +721,7 @@ class Navigation extends React.Component {
               </Col>
               <Col sm={2} md={2}></Col>
               <div style={{ position: 'absolute', right: '27%', top: 15 }}>
-                <img src={require('./asset/Home/close.png')} alt='Button Close' style={{ cursor: 'pointer', width: 50, height: 50, backgroundColor: 'transparent', border: 'transparent 20px' }} onClick={() => { document.getElementById("notiBanner").style.display = "none"; localStorage.removeItem('success'); document.getElementById("notiCoverOne").style.display = "none"; }}></img>
+                <img src={require('./asset/Home/close.png')} style={{ cursor: 'pointer', width: 50, height: 50, backgroundColor: 'transparent', border: 'transparent 20px' }} onClick={() => { document.getElementById("notiBanner").style.display = "none"; localStorage.removeItem('success'); document.getElementById("notiCoverOne").style.display = "none"; }}></img>
               </div>
               <Col sm={8} md={8}></Col>
               <Col sm={4} md={4}>
@@ -718,7 +747,7 @@ class Navigation extends React.Component {
               </Col>
               <Col sm={2} md={2}></Col>
               <div style={{ position: 'absolute', right: '27%', top: 15 }}>
-                <img src={require('./asset/Home/close.png')} alt='Button Close' style={{ cursor: 'pointer', width: 50, height: 50, backgroundColor: 'transparent', border: 'transparent 20px' }} onClick={() => { document.getElementById("notiBannerLogin").style.display = "none"; localStorage.removeItem('loginprompt'); document.getElementById("notiCoverTwo").style.display = "none"; }}></img>
+                <img src={require('./asset/Home/close.png')} style={{ cursor: 'pointer', width: 50, height: 50, backgroundColor: 'transparent', border: 'transparent 20px' }} onClick={() => { document.getElementById("notiBannerLogin").style.display = "none"; localStorage.removeItem('loginprompt'); document.getElementById("notiCoverTwo").style.display = "none"; }}></img>
               </div>
               <Col sm={8} md={8}></Col>
               <Col sm={4} md={4}>
@@ -761,7 +790,7 @@ function search() {
       var prod_json = JSON.parse(prod)
 
       _.forEach(prod_json, function (value, index) {
-        if (value.title.includes(d) === true) {
+        if (value.title.includes(d) == true) {
           // window.location.hash = value.id;
           document.getElementById(value.id).scrollIntoView({ block: "center", inline: "center" });
         }
@@ -771,4 +800,4 @@ function search() {
     });
 }
 
-export default Navigation
+export default Navigation;
