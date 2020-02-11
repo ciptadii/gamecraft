@@ -1,0 +1,9 @@
+kendala : 
+  - merubah tampilan file package.js (package dan shop) agar dinamis (macetnya disini), tampilan saat ini masih statis dan komponen package kurang rapih sedikit, 
+  nanti akan saya lanjutkan.
+  - merubah tampilan navigation sesuai mockup, kendalanya navigation project asli dibuat manual bukan dari navigation bootstrap, jadi agak susah membaca code
+  - untuk responsive nya project asli menggunakan media query, saya kurang paham penyesuaian ukuran dibawah 1920px, untuk sistem grid nya juga agak berantakan
+  - penulisan code juga tidak rapi, saya rapikan sedikit" biar agak mudah dibaca, tp agak memakan waktu
+  - banyak warning dan error dari sananya
+
+pengerjaan terakhir di file Footer.js line 4 menghilangkan style component yang tidak diperlukan

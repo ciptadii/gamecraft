@@ -1,7 +1,7 @@
 import React from 'react'
 import style from 'styled-components'
 // import { DropdownMenu, MenuItem } from 'react-bootstrap-dropdown-menu';
-import { Grid, Row, Col, NavDropdown, MenuItem } from 'react-bootstrap'
+import { Grid, Row, Col, NavDropdown, MenuItem, Glyphicon } from 'react-bootstrap'
 import $ from 'jquery';
 import axios from 'axios';
 import _ from 'lodash'
@@ -91,7 +91,8 @@ const Nav = style.div`
     
     /* Links inside the dropdown */
     .dropdown-content a {
-      color: white;
+      color: #F6F6F6;
+      top: 14px;
       padding: 12px 16px;
       text-decoration: none;
       display: block;
@@ -122,18 +123,30 @@ const Nav = style.div`
       display: inline-block;
     }
     .dropdown-menu{
-      background-color: black;
+      background-color: #F6F6F6;
       color: #ffffff
       border: 1px solid white;
       border-radius: 0px;
+      min-height: 634px;
+      min-width: 800px;
+     
     }
     .dropdown-menu>li>a:focus, .dropdown-menu>li>a:hover{
       color: #ffffff;
       text-decoration: none;
       background-color: #8b0013;
+   
+      
     }
     .dropdown-menu>li>a{
-      color: #ffffff
+      color: #000
+      background-color: #ffffff
+    
+      min-width: 698px;
+      font-size: 30px;
+      margin-top: 10px;
+      margin-bottom: 10px;
+     
     }
 `
 
@@ -178,7 +191,6 @@ const NavNoti = style.div`
     100% { opacity: 0;}
   }
 `
-
 const NavNotiLogin = style.div`
     background-color: transparent;
     font-size: 15px;
@@ -463,9 +475,21 @@ class Navigation extends React.Component {
   NotLoggedInCont() {
     document.getElementById("pointDisplay").style.display = 'none'
     document.getElementById("textPrompt").innerHTML = 'กรุณาล็อคอิน'
-    const notloggedmenu = <NavDropdown eventKey={8} title="" id="basic-nav-dropdown"><MenuItem eventKey={8.1} href='/login'>ลงชื่อเข้าใช้</MenuItem><MenuItem eventKey={8.2} href='/regis'>สร้างบัญชี</MenuItem></NavDropdown>
+    const notloggedmenu = <NavDropdown eventKey={8} title="" id="basic-nav-dropdown">
+      <MenuItem eventKey={8.1} href='/login'> <Row><Col md={8} style={{ display: 'inline-block', marginTop: 59, marginBottom: 59, marginLeft: 114, verticalAlign: 'middle', lineHeight: 1.5 }}>ข้อมูลส่วนตัว </Col><Col md={{ span: 8, offset: 8 }}> {<Glyphicon style={{ display: 'inline-block', margin: 49, verticalAlign: 'middle', lineHeight: 1.5 }} glyph="glyphicon glyphicon-chevron-right" />}</Col> </Row>
+      </MenuItem>
+      <MenuItem eventKey={8.1} href='/login'> <Row><Col md={8} style={{ display: 'inline-block', marginTop: 59, marginBottom: 59, marginLeft: 114, verticalAlign: 'middle', lineHeight: 1.5 }}>ประวัติการซื้อ </Col><Col md={{ span: 8, offset: 8 }}> {<Glyphicon style={{ display: 'inline-block', margin: 59, verticalAlign: 'middle', lineHeight: 1.5 }} glyph="glyphicon glyphicon-chevron-right" />}</Col> </Row>
+      </MenuItem>
+      <MenuItem eventKey={8.1} href='/login'> <Row><Col md={8} style={{ display: 'inline-block', marginTop: 59, marginBottom: 59, marginLeft: 114, verticalAlign: 'middle', lineHeight: 1.5 }}>แต้มสะส </Col><Col md={{ span: 8, offset: 8 }}> {<Glyphicon style={{ display: 'inline-block', margin: 59, verticalAlign: 'middle', lineHeight: 1.5 }} glyph="glyphicon glyphicon-chevron-right" />}</Col> </Row>
+      </MenuItem>
+      <MenuItem eventKey={8.1} href='/login'> <Row><Col md={8} style={{ display: 'inline-block', marginTop: 59, marginBottom: 59, marginLeft: 114, verticalAlign: 'middle', lineHeight: 1.5 }}>ขั้นตอนการเติมเงิน </Col><Col md={{ span: 8, offset: 8 }}> {<Glyphicon style={{ display: 'inline-block', margin: 59, verticalAlign: 'middle', lineHeight: 1.5 }} glyph="glyphicon glyphicon-chevron-right" />}</Col> </Row>
+      </MenuItem>
+      <MenuItem eventKey={8.1} href='/login'> <Row><Col md={8} style={{ display: 'inline-block', marginTop: 59, marginBottom: 59, marginLeft: 114, verticalAlign: 'middle', lineHeight: 1.5 }}>ออกจากระบบ </Col><Col md={{ span: 8, offset: 8 }}> </Col> </Row>
+      </MenuItem>
+    </NavDropdown>
     this.setState({ navmenu: notloggedmenu })
   }
+
 
   setCookieTab(cname) {
     var d = new Date();
@@ -618,7 +642,6 @@ class Navigation extends React.Component {
         <Nav>
           <Header>
             <NavbarContainer>
-
               <Grid style={{ textAlign: 'center', alignContent: 'center' }}>
                 <Row>
                   <Col sm={2} md={2}><a href="/"><img style={{ paddingTop: 6 }} src={logo}></img></a></Col>
