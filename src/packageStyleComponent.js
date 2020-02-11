@@ -19,8 +19,9 @@ export const Section = styled.div`
     // background-repeat: no-repeat;
     // background-size: 100% 100%;
     width: 100%;
+    margin: 0 auto;
     // height: 1000px;
-    color: white;
+    // color: white;
 
     @media (max-width: 768px) {
         // height: 125%;
@@ -31,10 +32,12 @@ export const Section = styled.div`
         margin: 0 auto;
     }
 
+    .panel-title {
+        background-color: white;
+    }
+
     .panel-body {
         padding: 0px;
-        background-color: transparent;
-        
     }
 
 
@@ -271,14 +274,18 @@ export const TabsBox = styled.div`
 export const Content = styled.div`
     position: relative;
     margin: 0 auto;
-    width: 70vw;
     min-width: 768px;
     // height: ${winHeight*80/100}px;
     text-align:center;
 
+    .panel-group {
+      margin: 0;
+    }
+
     @media only screen and (max-width: 1920px){
         .container{
-            width: 970px;
+            width: 1329px !important;
+            padding: 0;
             }
             @media only screen and (max-width: 768px){
               .container {
@@ -289,8 +296,11 @@ export const Content = styled.div`
       }
 
       .panel{
+        padding: 0 5.9px;
         border: none;
-        background-color: rgb(18, 18, 18);
+        background-clip: content-box;
+        -webkit-box-shadow: none;
+        box-shadow: none;
     }
     .panel-group .panel-heading+.panel-collapse>.panel-body{
         padding: 0px;

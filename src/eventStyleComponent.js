@@ -241,7 +241,6 @@ export const Section = styled.div`
 export const Content = styled.div`
     position: relative;
     margin: 0 auto;
-    width: 70vw;
     min-width: 768px;
     // height: ${winHeight*80/100}px;
 
@@ -259,30 +258,17 @@ export const Content = styled.div`
 
     @media only screen and (max-width: 1920px){
         .container{
-            width: 970px;
+            width: 1920px !important;
+            padding: 0px
             }
             @media only screen and (max-width: 768px){
               .container {
-               width: 750px;
-              }
+               width: 768px !important;
+               padding: 0px;
+            }
     }
       }
 `
-export const TopicHeader = styled.div`
-    position:relative;
-    text-align:center;
-    width:100%;
-    left:0;
-
-    img{
-        width: 100%;
-        // height: 125px;
-    }
-
-    .TabsHeader{
-        width:50px;
-    }
-`;
 
 export const PackageImage = styled.img`
     height:300px;

@@ -56,7 +56,7 @@ export const SectionContainerEX = styled.div`
     padding-top: 0px;
 
     &.mobile {
-      padding-top: 8.5vh;
+      // padding-top: 8.5vh;
     }
 `
 
