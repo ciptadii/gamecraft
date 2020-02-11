@@ -16,7 +16,7 @@ export class LoginGoogle extends Component {
     
     window.gapi.load('auth2', () => {
       this.auth2 = gapi.auth2.init({
-        client_id: 'YOUR_CLIENT_ID.apps.googleusercontent.com',
+        client_id: '313869649394-rejfkeuinfiknt5ekr6j7gq9mloe0vr0.apps.googleusercontent.com',
       })
 
       // this.auth2.attachClickHandler(document.querySelector('#loginButton'), {}, this.onLoginSuccessful.bind(this))
