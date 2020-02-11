@@ -1,41 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width">
   <link rel="shortcut icon" href="%PUBLIC_URL%/ICON-3K.webp">
   <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no, user-scalable=yes"> -->
   <meta name="theme-color" content="#000000">
-  <meta name="google-signin-client_id"
-    content="274707302195-o4erl7j9lnc6f6sj7607onvr71qaqgh9.apps.googleusercontent.com">
   <!--
       manifest.json provides metadata used when your web app is added to the
       homescreen on Android. See https://developers.google.com/web/fundamentals/web-app-manifest/
     -->
   <link rel="manifest" href="%PUBLIC_URL%/manifest.json">
 
-  <!-- Facebook Pixel Code -->
+  <!-- Facebook Login -->
+  
   <script>
-    !function (f, b, e, v, n, t, s) {
-      if (f.fbq) return; n = f.fbq = function () {
-        n.callMethod ?
-          n.callMethod.apply(n, arguments) : n.queue.push(arguments)
-      };
-      if (!f._fbq) f._fbq = n; n.push = n; n.loaded = !0; n.version = '2.0';
-      n.queue = []; t = b.createElement(e); t.async = !0;
-      t.src = v; s = b.getElementsByTagName(e)[0];
-      s.parentNode.insertBefore(t, s)
-    }(window, document, 'script',
-      'https://connect.facebook.net/en_US/fbevents.js');
-    fbq('init', '496587337760592');
-    fbq('track', 'PageView');
-  </script>
-  <noscript><img height="1" width="1" style="display:none"
-      src="https://www.facebook.com/tr?id=496587337760592&ev=PageView&noscript=1" /></noscript>
-  <!-- End Facebook Pixel Code -->
+    window.fbAsyncInit = function () {
+      FB.init({
+        appId: '572616306921092',
+        autoLogAppEvents: true,
+        xfbml: true,
+        version: 'v2.11'
+      });
 
-  <!-- Old facebook ID: 328715094501495 -->
+      // Broadcast an event when FB object is ready
+      var fbInitEvent = new Event('FBObjectReady');
+      document.dispatchEvent(fbInitEvent);
+    };
+
+    (function (d, s, id) {
+      var js, fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) { return; }
+      js = d.createElement(s); js.id = id;
+      js.src = "https://connect.facebook.net/en_US/sdk.js";
+      fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));
+  </script>
+
+
+  <!-- Google Login -->
+
+  <script src="https://apis.google.com/js/api.js" async defer></script>
 
   <!-- Latest compiled and minified CSS -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
@@ -80,11 +85,10 @@
   <title>GIGA Three Kingdom Web Store</title>
 </head>
 
-<body style="overflow-x:hidden; overflow-y: hidden; background-color: #0e0000; outline-style: solid; outline-color: #0e0000; outline-width: 4px;">
-  <noscript>
-    You need to enable JavaScript to run this app.
-  </noscript>
-  <div id="root" style="width: 100vw"></div>
+<body>
+  <noscript>You need to enable JavaScript to run this app.</noscript>
+  <div id="root"></div>
+  
   <!--
       This HTML file is a template.
       If you open it directly in the browser, you will see an empty page.
@@ -95,7 +99,5 @@
       To begin the development, run `npm start` or `yarn start`.
       To create a production bundle, use `npm run build` or `yarn build`.
     -->
-    <footer style="background-color: #0e0000;width: 100%"></footer>
 </body>
-
 </html>

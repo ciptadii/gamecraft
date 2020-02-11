@@ -6,30 +6,31 @@ import $ from 'jquery';
 import axios from 'axios';
 import _ from 'lodash'
 
+import { changeTab } from './PackHero'
+
+
 import UserIcon from './asset/Home/Untitled-2s.png'
-import logo from './Home/game_icon.png';
+import logo from './asset/nav/logo.png';
 import LoginPic from './asset/nav/Profile.png';
 import blackBG from './asset/top750_50.png';
-// import whiteBG from './asset/searchBar.png';
+import whiteBG from './asset/searchBar.png';
 import PackNav from './asset/nav/Package.png';
-// import okayButton from './asset/Home/close.png'
+import okayButton from './asset/Home/close.png'
 
 
 const Nav = style.div`
-    background-color: #FFFFFFFF;
+    background-color: #0e0000;
     font-size: 15px;
     width: 100vw;
     position: fixed;
     z-index: 9999;
     opacity: 1.0;
     min-width: 768px;
-    color: black;
-
-
+    color: #ffd84f;
           
       @media only screen and (max-width: 1920px){
         .container{
-            width: 1329px;
+            width: 970px;
             }
             @media only screen and (max-width: 768px){
               .container {
@@ -37,35 +38,29 @@ const Nav = style.div`
               }
     }
       }
-
       
     #__react_bs_dd_menuItems_1{
       background-color: black !important;
     }
-
     @media (max-width: 1366px) {
       font-size: 16px;
     }
-
     @media (max-width: 960px) {
       font-size: 11px;
     }
     
     & a {
         text-decoration: none;
-        color: black;
+        color: #ffd84f;
         display: inline-block;
         vertical-align: middle;
-
         @media (max-height: 768px) {
-
           @media all and (min-width: 200px) and (max-width: 770px) {
             padding-left: 10px;
             padding-right: 10px;
           }
         }
     }
-
     .dropbtn {
       // background-image: url(${PackNav});
       // background-size: 100% 100%;
@@ -111,7 +106,6 @@ const Nav = style.div`
     
     /* Change the background color of the dropdown button when the dropdown content is shown */
     .dropdown:hover .dropbtn {background-color: transparent;}
-
     a#basic-nav-dropdown.dropdown-toggle{
       width: 40px;
       height: 40px;
@@ -120,17 +114,14 @@ const Nav = style.div`
       background-image: url(${UserIcon});
       background-size: 100% 100%;
     }
-
     .caret{
       display:none;
     }
-
     .dropdown{
       width: 40px;
       height: 40px;
       display: inline-block;
     }
-
     .dropdown-menu{
       background-color: #F6F6F6;
       color: #ffffff
@@ -140,15 +131,13 @@ const Nav = style.div`
       min-width: 800px;
      
     }
-
-    .dropdown-menu>li>a:focus, .dropdown-menu>li>{
+    .dropdown-menu>li>a:focus, .dropdown-menu>li>a:hover{
       color: #ffffff;
       text-decoration: none;
       background-color: #8b0013;
    
       
     }
-
     .dropdown-menu>li>a{
       color: #000
       background-color: #ffffff
@@ -159,54 +148,47 @@ const Nav = style.div`
       margin-bottom: 10px;
      
     }
-
-
 `
 
 const NavNoti = style.div`
-    background-color: transparent;
-    font-size: 15px;
-    width: 100%;
-    position: fixed;
-    z-index: 120;
-    opacity: 1.0;
-    min-width: 768px;
-    min-height: 80px;
-    color: #ffffff;
-    top: 300px;
-
-    @media only screen and (max-width: 1920px){
-      .container{
-          width: 1329px;
-          text-align: center;
-          }
-          @media only screen and (max-width: 768px){
-            .container {
-             width: 750px;
-             text-align: center;
-            }
-            top: 430px !important;
+  background-color: transparent;
+  font-size: 15px;
+  width: 100%;
+  position: fixed;
+  z-index: 120;
+  opacity: 1.0;
+  min-width: 768px;
+  min-height: 80px;
+  color: #ffffff;
+  top: 300px;
+  @media only screen and (max-width: 1920px){
+    .container{
+      width: 970px;
+      text-align: center;
+    }
+    @media only screen and (max-width: 768px){
+      .container {
+        width: 750px;
+        text-align: center;
+      }
+      top: 430px !important;
+    }
   }
-    }
-
-    button{
-      background-color: black;
-      color: white;
-    }
-
-    .hidden {
+  button{
+    background-color: black;
+    color: white;
+  }
+  .hidden {
     // -webkit-animation: fadeOut 3s;
     // animation: fadeOut 3s;
-
     visibility: hidden;
     opacity: 0;
     transition: visibility 0s 2s, opacity 2s linear;
-    }
-
-    @keyframes fadeOut {
-      0% { opacity: 1;}
-      50% { opacity: 0.5}
-      100% { opacity: 0;}
+  }
+  @keyframes fadeOut {
+    0% { opacity: 1;}
+    50% { opacity: 0.5}
+    100% { opacity: 0;}
   }
 `
 const NavNotiLogin = style.div`
@@ -220,10 +202,9 @@ const NavNotiLogin = style.div`
     min-height: 80px;
     color: #ffffff;
     top: 300px;
-
     @media only screen and (max-width: 1920px){
       .container{
-          width: 1329px;
+          width: 970px;
           text-align: center;
           }
           @media only screen and (max-width: 768px){
@@ -234,26 +215,49 @@ const NavNotiLogin = style.div`
             top: 430px !important;
   }
     }
-
     button{
       background-color: black;
       color: white;
     }
-
     .hidden {
     // -webkit-animation: fadeOut 3s;
     // animation: fadeOut 3s;
-
     visibility: hidden;
     opacity: 0;
     transition: visibility 0s 2s, opacity 2s linear;
     }
-
     @keyframes fadeOut {
       0% { opacity: 1;}
       50% { opacity: 0.5}
       100% { opacity: 0;}
   }
+`
+
+const GoTop = style.div`
+    background-color: transparent;
+    font-size: 15px;
+    width: 5%;
+    position: fixed;
+    z-index: 110;
+    opacity: 1.0;
+    color: #ffd84f;
+    bottom: 5%;
+    right: 5%;
+    @media only screen and (max-width: 1920px){
+      .container{
+          width: 970px;
+          text-align: center;
+          }
+          @media only screen and (max-width: 768px){
+            .container {
+            width: 750px;
+            text-align: center;
+            }
+    }
+    }
+    img{
+      width: 100%;
+    }
 `
 
 const NavMobi = style.div`
@@ -264,56 +268,47 @@ const NavMobi = style.div`
     z-index: 9999;
     opacity: 1.0;
     min-width: 768px;
-    color: black;
+    color: #ffd84f;
     bottom: 0vh;
     // top: 95%;
-
     @media only screen and (min-width: 768px){
       bottom: 44%;
     }
-
-    @media only screen and (min-width: 768px){
-      bottom: 44%;
+          
+      @media only screen and (max-width: 1920px){
+        .container{
+            width: 970px;
+            }
+            // bottom: 80vh;
+            @media only screen and (max-width: 768px){
+              .container {
+               width: 750px;
+              }
     }
-    @media only screen and (max-width: 1920px){
-      .container{
-        width: 1329px;
       }
-      // bottom: 80vh;
-      @media only screen and (max-width: 768px){
-        .container {
-          width: 750px;
-        }
-      }
-    }
-
+      
     #__react_bs_dd_menuItems_1{
       background-color: black !important;
     }
-
     @media (max-width: 1366px) {
       font-size: 27px;
     }
-
     @media (max-width: 960px) {
       font-size: 11px;
     }
     
     & a {
         text-decoration: none;
-        color: black;
+        color: #ffd84f;
         display: inline-block;
         vertical-align: middle;
-
         @media (max-height: 768px) {
-
           @media all and (min-width: 200px) and (max-width: 770px) {
             padding-left: 10px;
             padding-right: 10px;
           }
         }
     }
-
     a#basic-nav-dropdown.dropdown-toggle{
       width: 40px;
       height: 40px;
@@ -321,17 +316,14 @@ const NavMobi = style.div`
       background-image: url(${LoginPic});
       background-size: 100% 100%;
     }
-
     .caret{
       display:none;
     }
-
     .dropdown{
       width: 40px;
       height: 40px;
       display: inline-block;
     }
-
     .dropdown-menu{
       background-color: black;
       color: #ffffff
@@ -339,7 +331,6 @@ const NavMobi = style.div`
       border-radius: 0px;
       top: -300%;
       left: -120px;
-
       @media only screen and (max-width: 768px){
         top: -235%;
         left: -260px;
@@ -347,80 +338,69 @@ const NavMobi = style.div`
         font-size: 25px;
       }
     }
-
     .dropdown-menu>li>a:focus, .dropdown-menu>li>a:hover{
       color: #ffffff;
       text-decoration: none;
       background-color: #8b0013;
     }
-
     .dropdown-menu>li>a{
       color: #ffffff
     }
-
-
 `
 
 const Header = style.div`
   position: relative;
   margin: 0 auto;
   width: 70vw;
-  max-width: 1329px;
   min-width: 768px;
   // height: 4.375vw;
   min-height: 95px;
   vertical-align: middle;
 `
 
-// const LogoDiv = style.div`
-//     display: inline-block;
-//     width: 10%;
-// `;
+const LogoDiv = style.div`
+    display: inline-block;
+    width: 10%;
+`;
 
-// const LogoLink = style.a`
-//   width: 100%;
-//   display: inline-block;
-// `
+const LogoLink = style.a`
+  width: 100%;
+  display: inline-block;
+`
 
-// const Logo = style.img`
-//   width: 100%;
-//   padding: 5px 0;
-//   display: inline-block;
-// `
+const Logo = style.img`
+  width: 100%;
+  padding: 5px 0;
+  display: inline-block;
+`
 
 const NavbarContainer = style.div`
   width: 100%;
   display: inline-block;
 `
 
-// const NavBar = style.span`
-//   display: inline-block;
-//   text-align: center;
-//   margin: 0 auto;
-//   width: 90%;
-//   padding-top: 13px;
-
-//   .__react_bs_dd_menuItems_1{
-//     left: 0px !important;
-//     top: 50px !important;
-//     min-width: 250px !important;
-//   }
-
-//   #__react_bs_dd_carat_1{
-//     top: 8px;
-//   }
-
-// `
+const NavBar = style.span`
+  display: inline-block;
+  text-align: center;
+  margin: 0 auto;
+  width: 90%;
+  padding-top: 13px;
+  .__react_bs_dd_menuItems_1{
+    left: 0px !important;
+    top: 50px !important;
+    min-width: 250px !important;
+  }
+  #__react_bs_dd_carat_1{
+    top: 8px;
+  }
+`
 
 const NavBarTab = style.a`
   padding-top: 20px;
   margin: 0 8px;
-  font-size: 24px;
-
   @media only screen and (max-width: 767px){
     margin: 0 -2px;
   }
-
 `
 
 const NotiCoverOne = style.img`
@@ -447,7 +427,6 @@ const NavBarTabDiv = style.a`
   background-image: url(${PackNav});
   background-size: 100% 100%;
   background-repeat: no-repeat;
-
   @media only screen and (max-width: 767px){
     margin: 0 -2px;
   }
@@ -455,7 +434,7 @@ const NavBarTabDiv = style.a`
 
 const PointID = style.span`
   padding-top: 5px;
-  color: black;
+  color:#ffd84f;
 `
 
 // const LoggedInCont = <NavDropdown eventKey={8} title="" id="basic-nav-dropdown"><MenuItem eventKey={8.1} href='/id'>ข้อมูลส่วนตัว</MenuItem><MenuItem eventKey={8.2} href='/history'>ประวัติการซื้อขาย</MenuItem><MenuItem eventKey={8.3} href='/history'>กระเป๋า</MenuItem><MenuItem eventKey={8.4} href='#' onClick={()=>{this.deleteCookieLogin("LoggedIn"); window.location.replace("/")}}><i class="glyphicon glyphicon-log-out"></i> &nbsp;ออกจากระบบ</MenuItem></NavDropdown>
@@ -755,6 +734,9 @@ class Navigation extends React.Component {
             </Row>
           </Grid>
         </NavNoti>
+        <GoTop>
+          <a href="#home"><img src={require('./asset/Home/Up-Button.png')}></img></a>
+        </GoTop>
       </>);
     }
   }
@@ -800,4 +782,4 @@ function search() {
     });
 }
 
-export default Navigation;
+export default Navigation

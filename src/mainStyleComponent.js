@@ -73,11 +73,11 @@ export const Body = styled.div`
     width: 100vw;
     height: 100vh;
     color: white;
-    overflow-y: scroll;
+    // overflow-y: scroll;
     // overflow-x: hidden;
     min-width: 768px !important;
-    -ms-overflow-style: none;
-    overflow: -moz-scrollbars-none;
+    // -ms-overflow-style: none;
+    // overflow: -moz-scrollbars-none;
     scrollbar-width: none;
     background-color: #F5F5F5;
     background-position: center;
@@ -891,13 +891,11 @@ export const BodyLogin = styled.div`
     background-repeat: no-repeat;
     background-size: 100% 100%;
     font-family: 'RSU';
-
     user-select: none; /* supported by Chrome and Opera */
     -webkit-user-select: none; /* Safari */
     -khtml-user-select: none; /* Konqueror HTML */
     -moz-user-select: none; /* Firefox */
     -ms-user-select: none; /* Internet Explorer/Edge */
-
     @media only screen and (max-width: 768px){
       min-width: 768px;
       width: 768px;
@@ -905,16 +903,13 @@ export const BodyLogin = styled.div`
       min-height: 1024px;
       height: 1366px;
       // min-height: 100vh;
-
       @font-face {
         font-family: 'RSU';
         unicode-range: U+0E00–U+0E7F;
       }
-
       input.regisInput{
         border-radius: 5px;
       }
-
       ::-webkit-input-placeholder {
         text-align: center;
      }
@@ -937,26 +932,21 @@ export const BodyLogin = styled.div`
       @-o-viewport{initial-scale=0.3}
       @viewport{initial-scale=0.3}
     }
-
     input:focus {
       &.${Landscape} {
         display:none;
       }
     }
     scroll-behavior: smooth;
-
     .col-lg-1, .col-lg-10, .col-lg-11, .col-lg-12, .col-lg-2, .col-lg-3, .col-lg-4, .col-lg-5, .col-lg-6, .col-lg-7, .col-lg-8, .col-lg-9, .col-md-1, .col-md-10, .col-md-11, .col-md-12, .col-md-2, .col-md-3, .col-md-4, .col-md-5, .col-md-6, .col-md-7, .col-md-8, .col-md-9, .col-sm-1, .col-sm-10, .col-sm-11, .col-sm-12, .col-sm-2, .col-sm-3, .col-sm-4, .col-sm-5, .col-sm-6, .col-sm-7, .col-sm-8, .col-sm-9, .col-xs-1, .col-xs-10, .col-xs-11, .col-xs-12, .col-xs-2, .col-xs-3, .col-xs-4, .col-xs-5, .col-xs-6, .col-xs-7, .col-xs-8, .col-xs-9{
       padding-left: 0px;
       padding-right: 0px;
     }
-
     ::-webkit-scrollbar {display:none;}
-
     #home #accordian-controlled-example.panel-group{
       background-color: black;
       margin-bottom: 0px !important;
     }
-
     .method{
       display: block; 
       color: white; 
@@ -973,7 +963,6 @@ export const BodyLogin = styled.div`
       width: 100%;
       background: #810102 url(${ConfirmBut}) no-repeat 100% 100%;
     }
-
     
     .sv{
       display: block; 
@@ -984,49 +973,40 @@ export const BodyLogin = styled.div`
       width: 100%;
       background: #230102 url(${TruIcon}) no-repeat 100% 100%;
     }
-
       // @if .panel .collapse.in{
         
       // }
-
       // .panel-heading{
       //   opacity: 0.2;
       // }
-
     .collapse.in .panel-body{
       height: 269px;
       background-color: transparent;
     }
-
     // .collapse.in>.panel-heading{
     //   opacity: 0.2;
     // }
-
     // .panel-collapse{
     //   opacity: 0.2;
     // }
-
     // .panel-heading! .collapse.in > .panel-heading {
     //   opacity: 0.2;
     // }
-
     // .panel > div.collapse.in ~ div.panel-heading{
     //   opacity: 0.2;
     // }
-
     .collapse.in ~ .panel-heading{
       opacity: 0.2;
     }
-
     // .collapse.in{
     //   background-color: #0C0C0C;
     //   background-size: 1000% 1000%;
     //   z-index: 9999;
     // }
-
     // .opaWrapper{
     //   background-color: #0C0C0C;
     //   background-size: 1000% 1000%;
     //   z-index: 9998;
     // }
 `
+

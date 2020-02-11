@@ -1,0 +1,13 @@
+---------------- Login------------------
+
+src---|
+      |---MainLogin.js
+                    |----LoginStyle.js
+                    |----LoginFacebook.js
+                              |-----Index.html line 17
+                    |----LoginGoogle.js
+
+kendala: 
+  Untuk login Facebook APPID dari facebook developer menggunakan id dari facebook yang tehubung ke facebook saya, APPID: 572616306921092 ada di (index.html line 20) 
+    jika login pakek id facebook saya bisa masuk sedangkan ID facebook lain tidak bisa masuk karena Privacy Policy URL masih kosong
+
