@@ -13,8 +13,6 @@ const NavLog = style.div`
     opacity: 1.0;
     min-width: 768px;
     color: #ffd84f;
-
-
           
       @media only screen and (max-width: 1920px){
         .container{
@@ -39,7 +37,6 @@ const NavNoti = style.div`
     color: #c1f26b;
     top: 107px;
     min-height: 80px;
-
     @media only screen and (max-width: 1920px){
       .container{
           width: 970px;
@@ -52,21 +49,17 @@ const NavNoti = style.div`
             }
   }
     }
-
     button{
       background-color: black;
       color: white;
     }
-
     .hidden {
     // -webkit-animation: fadeOut 3s;
     // animation: fadeOut 3s;
-
     visibility: hidden;
     opacity: 0;
     transition: visibility 0s 2s, opacity 2s linear;
     }
-
     @keyframes fadeOut {
       0% { opacity: 1;}
       50% { opacity: 0.5}
@@ -176,4 +169,3 @@ class NavLogin extends React.Component {
   }
   
   export default NavLogin
-  

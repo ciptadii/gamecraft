@@ -27,8 +27,6 @@ const Nav = style.div`
     opacity: 1.0;
     min-width: 768px;
     color: #ffd84f;
-
-
           
       @media only screen and (max-width: 1920px){
         .container{
@@ -40,16 +38,13 @@ const Nav = style.div`
               }
     }
       }
-
       
     #__react_bs_dd_menuItems_1{
       background-color: black !important;
     }
-
     @media (max-width: 1366px) {
       font-size: 16px;
     }
-
     @media (max-width: 960px) {
       font-size: 11px;
     }
@@ -59,16 +54,13 @@ const Nav = style.div`
         color: #ffd84f;
         display: inline-block;
         vertical-align: middle;
-
         @media (max-height: 768px) {
-
           @media all and (min-width: 200px) and (max-width: 770px) {
             padding-left: 10px;
             padding-right: 10px;
           }
         }
     }
-
     .dropbtn {
       // background-image: url(${PackNav});
       // background-size: 100% 100%;
@@ -113,7 +105,6 @@ const Nav = style.div`
     
     /* Change the background color of the dropdown button when the dropdown content is shown */
     .dropdown:hover .dropbtn {background-color: transparent;}
-
     a#basic-nav-dropdown.dropdown-toggle{
       width: 40px;
       height: 40px;
@@ -122,35 +113,28 @@ const Nav = style.div`
       background-image: url(${UserIcon});
       background-size: 100% 100%;
     }
-
     .caret{
       display:none;
     }
-
     .dropdown{
       width: 40px;
       height: 40px;
       display: inline-block;
     }
-
     .dropdown-menu{
       background-color: black;
       color: #ffffff
       border: 1px solid white;
       border-radius: 0px;
     }
-
     .dropdown-menu>li>a:focus, .dropdown-menu>li>a:hover{
       color: #ffffff;
       text-decoration: none;
       background-color: #8b0013;
     }
-
     .dropdown-menu>li>a{
       color: #ffffff
     }
-
-
 `
 
 const NavNoti = style.div`
@@ -164,7 +148,6 @@ const NavNoti = style.div`
   min-height: 80px;
   color: #ffffff;
   top: 300px;
-
   @media only screen and (max-width: 1920px){
     .container{
       width: 970px;
@@ -178,21 +161,17 @@ const NavNoti = style.div`
       top: 430px !important;
     }
   }
-
   button{
     background-color: black;
     color: white;
   }
-
   .hidden {
     // -webkit-animation: fadeOut 3s;
     // animation: fadeOut 3s;
-
     visibility: hidden;
     opacity: 0;
     transition: visibility 0s 2s, opacity 2s linear;
   }
-
   @keyframes fadeOut {
     0% { opacity: 1;}
     50% { opacity: 0.5}
@@ -211,7 +190,6 @@ const NavNotiLogin = style.div`
     min-height: 80px;
     color: #ffffff;
     top: 300px;
-
     @media only screen and (max-width: 1920px){
       .container{
           width: 970px;
@@ -225,21 +203,17 @@ const NavNotiLogin = style.div`
             top: 430px !important;
   }
     }
-
     button{
       background-color: black;
       color: white;
     }
-
     .hidden {
     // -webkit-animation: fadeOut 3s;
     // animation: fadeOut 3s;
-
     visibility: hidden;
     opacity: 0;
     transition: visibility 0s 2s, opacity 2s linear;
     }
-
     @keyframes fadeOut {
       0% { opacity: 1;}
       50% { opacity: 0.5}
@@ -257,7 +231,6 @@ const GoTop = style.div`
     color: #ffd84f;
     bottom: 5%;
     right: 5%;
-
     @media only screen and (max-width: 1920px){
       .container{
           width: 970px;
@@ -270,7 +243,6 @@ const GoTop = style.div`
             }
     }
     }
-
     img{
       width: 100%;
     }
@@ -287,12 +259,9 @@ const NavMobi = style.div`
     color: #ffd84f;
     bottom: 0vh;
     // top: 95%;
-
     @media only screen and (min-width: 768px){
       bottom: 44%;
     }
-
-
           
       @media only screen and (max-width: 1920px){
         .container{
@@ -305,16 +274,13 @@ const NavMobi = style.div`
               }
     }
       }
-
       
     #__react_bs_dd_menuItems_1{
       background-color: black !important;
     }
-
     @media (max-width: 1366px) {
       font-size: 27px;
     }
-
     @media (max-width: 960px) {
       font-size: 11px;
     }
@@ -324,16 +290,13 @@ const NavMobi = style.div`
         color: #ffd84f;
         display: inline-block;
         vertical-align: middle;
-
         @media (max-height: 768px) {
-
           @media all and (min-width: 200px) and (max-width: 770px) {
             padding-left: 10px;
             padding-right: 10px;
           }
         }
     }
-
     a#basic-nav-dropdown.dropdown-toggle{
       width: 40px;
       height: 40px;
@@ -341,17 +304,14 @@ const NavMobi = style.div`
       background-image: url(${LoginPic});
       background-size: 100% 100%;
     }
-
     .caret{
       display:none;
     }
-
     .dropdown{
       width: 40px;
       height: 40px;
       display: inline-block;
     }
-
     .dropdown-menu{
       background-color: black;
       color: #ffffff
@@ -359,7 +319,6 @@ const NavMobi = style.div`
       border-radius: 0px;
       top: -300%;
       left: -120px;
-
       @media only screen and (max-width: 768px){
         top: -235%;
         left: -260px;
@@ -367,18 +326,14 @@ const NavMobi = style.div`
         font-size: 25px;
       }
     }
-
     .dropdown-menu>li>a:focus, .dropdown-menu>li>a:hover{
       color: #ffffff;
       text-decoration: none;
       background-color: #8b0013;
     }
-
     .dropdown-menu>li>a{
       color: #ffffff
     }
-
-
 `
 
 const Header = style.div`
@@ -389,7 +344,6 @@ const Header = style.div`
   // height: 4.375vw;
   min-height: 95px;
   vertical-align: middle;
-
 `
 
 const LogoDiv = style.div`
@@ -419,27 +373,22 @@ const NavBar = style.span`
   margin: 0 auto;
   width: 90%;
   padding-top: 13px;
-
   .__react_bs_dd_menuItems_1{
     left: 0px !important;
     top: 50px !important;
     min-width: 250px !important;
   }
-
   #__react_bs_dd_carat_1{
     top: 8px;
   }
-
 `
 
 const NavBarTab = style.a`
   padding-top: 20px;
   margin: 0 8px;
-
   @media only screen and (max-width: 767px){
     margin: 0 -2px;
   }
-
 `
 
 const NotiCoverOne = style.img`
@@ -466,7 +415,6 @@ const NavBarTabDiv = style.a`
   background-image: url(${PackNav});
   background-size: 100% 100%;
   background-repeat: no-repeat;
-
   @media only screen and (max-width: 767px){
     margin: 0 -2px;
   }
